@@ -1,0 +1,19 @@
+
+
+
+
+
+
+ @media only screen and (max-width:650px){
+
+ .gal1{width:85%;
+    height:200px;
+    border:1px solid white;
+    }
+
+ .gal3>img{width:200px;
+    height:150px;
+    }
+
+
+ }

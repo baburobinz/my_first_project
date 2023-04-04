@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book For A Hair Cut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <style>
+
+<!--        quotes-->
+
+        .myQuotes{display:none;
+        align-items:center;
+        justify-content:center;
+
+        }
+
+
+
+
+        input{font-family:'Cinzel', serif;}
+        select{font-family:'Cinzel', serif;}
+
+        .parent-container{
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+        background-image:url('static/img/booking_haircut1.jpg');
+        background-repeat:no-repeat;
+        height:100dvh;
+        width:100%;
+        background-position:center;
+        }
+
+        .sub-container2{display:grid;
+        width:50%;
+        height:50%;
+        grid-template-rows:12% 12% 12% 15% 12%;
+        justify-content:center;
+        gap:10px;
+        grid-template-columns:auto;
+        align-content:center;
+        background:rgb(0, 0, 0,0.5);
+        border-radius:20px;
+        border:3px solid white;}
+
+        .sub-container2>input{
+        background:rgba();
+        border-radius:10px;
+        text-align:center;
+        }
+
+        .sub-container2>div{grid-column:1 / span 2;
+        display:flex;
+
+
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        gap:10px;
+        font-family:'Cinzel', serif;
+        color:green;
+        background:white;
+        border-radius:15px;
+        }
+
+
+
+        .sub-container2>select{
+        border-radius:10px;
+        grid-column:1/span2;
+        text-align:center;
+       background:rgba(23, 42, 255, 0.85);
+       color:white;
+       border:2px solid white;
+        }
+
+
+
+        .check{width:20px;
+        height:20px;}
+
+        #b1{
+
+        background:rgba(252, 5, 5,0.7);
+        color:white;
+        font-size:17px;
+        grid-column: 1 / span 2;
+        }
+
+        #b1:hover{background:rgba(252, 5, 5,1)}
+
+        #b1:active{background:green;}
+
+        .sub-container1{
+
+        display:flex;
+        width:30%;
+        border-radius:100px 0 100px 0;
+        font-family: 'Dancing Script', cursive;
+        text-align:center;
+        background:rgba(255,255,255,0.3);
+        color:rgba(10, 136, 140);
+        justify-content:center;
+        align-items:center;
+        font-size:55px;
+        padding:20px;}
+
+
+
+
+        @media only screen and (max-width:950px){
+
+
+        .sub-container2>div{
+        font-size:10px;
+        gap:2px;}
+
+        .parent-container{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        padding:20px;
+        }
+
+        .sub-container1{
+        display:flex;
+        width:80%;
+        height:50%;
+        border-radius:50px 0 50px 0;
+        flex-wrap:wrap;
+        font-size:30px;
+        padding:10px;}
+
+
+        .check{width:10px;
+        height:10px;}
+
+
+
+
+
+        .sub-container2{display:grid;
+        height:60%;
+        width:80%;
+        grid-template-rows:12% 12% 12% 12% 12% 15% 11%;
+        grid-template-columns:70%;
+        justify-content:center;
+        gap:8px;
+        padding:20px;
+
+        align-content:center;
+        background:rgb(0, 0, 0,0.5);
+        border-radius:10px;
+        border:2px solid white;}
+
+        .sub-container2>input{
+        background:rgba();
+        grid-column:1 / span 2;
+        border-radius:10px;
+        text-align:center;
+        }
+
+        #b1{
+
+        background:rgba(252, 5, 5,0.7);
+        color:white;
+        font-size:13px;
+        grid-column: 1 / span 2;
+        }
+
+        .sub-container2>input{
+        border-radius:8px;
+        font-size:10px;}
+        }
+
+        .sub-container2>select{font-size:10px;}
+
+        @media only screen and (min-width:951px) and (max-width: 1300px) {
+
+        .sub-container1{
+        display:flex;
+        width:40%;
+        border-radius:80px 0 80px 0;
+        font-size:40px;
+        padding:10px;}
+
+        .sub-container2{display:grid;
+        height:35%;
+        width:50%;
+        padding:10px;
+        grid-template-rows:12% 12% 12% 15%;
+        justify-content:center;
+        gap:10px;
+        grid-template-columns:auto;
+        align-content:center;
+        background:rgb(0, 0, 0,0.5);
+        border-radius:20px;
+        padding:10px;
+        margin:auto;
+        border:2px solid white;}
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="parent-container">
+
+        <div class="sub-container1">
+
+            {% for i in quote %}
+
+            <div class="myQuotes">{{i.quote}}</div>
+
+            {% endfor %}
+
+
+        </div>
+        <form class="sub-container2" action="booked_haircut" method="post">
+
+
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="tel" placeholder="Phone Number" name="phone" pattern="[0-9]{10}" required>
+
+            <input type="time" name="time" id="book_time" required>
+            <input type="date" placeholder="Date" name="date" id="book_date" required>
+            <select name="sel" required>
+                <option disabled selected>Service</option>
+                <option >Massage</option>
+                <option >Hair Cut</option>
+                <option >Makeup</option>
+
+            </select>
+            <input type="submit" value="Book Now" id="b1">
+
+            {% csrf_token %}
+
+            {% if message %}
+
+            <div id="success_msg">{{message}}<img src="static/img/check_mark.png" class="check"></div>
+
+            <script>
+
+                var myTimeOut = setTimeout(booking_success,2000);
+
+                function booking_success(){
+
+                document.getElementById("success_msg").style.display="none";
+                }
+
+            </script>
+
+            {% endif %}
+
+
+
+        </form>
+
+
+
+    </div>
+
+<script>
+
+    var date = new Date();
+    var tdate = date.getDate();
+    var endate = date.getDate()+7;
+
+    var month = date.getMonth()+1;
+    if (tdate<10){
+    tdate = '0'+tdate;
+    }
+
+    if (month<10){
+    month = '0'+month;
+    }
+
+    var year = date.getUTCFullYear();
+    var minDate = year + "-" + month + "-" + tdate;
+    var maxDate = year + "-" + month + "-" + endate;
+
+    document.getElementById('book_date').setAttribute('min',minDate);
+    document.getElementById('book_date').setAttribute('max',maxDate);
+
+
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("myQuotes");
+    for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "flex";
+    setTimeout(carousel, 3000); // Change image every 2 seconds
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
