@@ -18,7 +18,9 @@ def home(request):
     data1 = gallery.objects.all()
     data2 = offers.objects.all().last()
 
-    return render(request, 'home.html',{'data':data1,'offer':data2})
+    dispuname = user_details.objects.get(user_name=request.session['id'])
+
+    return render(request, 'home.html',{'data':data1,'offer':data2,'dispuname':dispuname})
 
 
 
@@ -218,7 +220,7 @@ def booked_haircut(request):
 
 
 
-def clear_booking(request):
+def clear_booking_user(request):
     data=booking_details.objects.filter(User_name=request.session['id'])
     data.delete()
     return render(request, 'user_profile.html', {'notbooking': 'No Booking History'})

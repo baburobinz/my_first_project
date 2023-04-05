@@ -21,7 +21,7 @@
 
        .parent-container{display:grid;
        grid-template-columns:25% 60%;
-       grid-template-rows:10% 70%;
+       grid-template-rows:10% 80%;
        height:100vh;
        grid-gap:10px;
        padding:50px;
@@ -30,7 +30,7 @@
        justify-content:center;
        }
 
-       .parent-container>div{background:#78A4A8;
+       .parent-container>div{
        text-align:center;
        padding:10px;
        border:2px solid white;
@@ -38,12 +38,17 @@
 
        .sub-container1{grid-column:1 / span 2;
        border-radius:20px 20px 0 0;
+       background:white;
        font-size:30px;
        color:#0B1E4D;
        font-weight:lighter;
        }
-       .sub-container2{border-radius:0px 0px 0px 20px;}
-       .sub-container3{border-radius:0px 0px 20px 0px;}
+       .sub-container2{border-radius:0px 0px 0px 20px;
+       background:#78A4A8;
+       }
+       .sub-container3{border-radius:0px 0px 20px 0px;
+       background:#78A4A8;
+       }
 
 
        .content{display:flex;
@@ -330,7 +335,7 @@
 
             </table>
 
-            <button class="btn btn-danger" onclick="window.location.href='clear_booking'">Clear History</button>
+            <button class="btn btn-danger" onclick="window.location.href='clear_booking_user'">Clear History</button>
 
         </div>
 

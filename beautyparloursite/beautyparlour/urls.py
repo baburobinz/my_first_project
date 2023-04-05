@@ -14,7 +14,7 @@ urlpatterns=[
     path('change_password',views.change_password),
     path('booking_haircut',views.booking_haircut),
     path('booked_haircut',views.booked_haircut),
-    path('clear_booking',views.clear_booking),
+    path('clear_booking_user',views.clear_booking_user),
     path('show_booking_details',views.show_booking_details),
     path('admin_reg',views.admin_reg),
     path('admin_show_booking',views.admin_show_booking),
